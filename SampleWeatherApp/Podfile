@@ -6,5 +6,6 @@ target 'SampleWeatherApp' do
   # use_frameworks!
 
   # Pods for SampleWeatherApp
-  pod 'AFNetworking', '~> 3.1'
+  pod 'pop', '~> 1.0'
+  pod 'YWeatherAPI'
 end
