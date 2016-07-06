@@ -12,9 +12,13 @@
 @interface LocationManager : NSObject<CLLocationManagerDelegate> 
 
 typedef void (^GetCityName)(NSString *cityName);
+typedef void (^GeLocation)(NSString *latitude, NSString *longitude);
+typedef void (^Failure)(NSError *error);
 
 +(LocationManager*)sharedManager;
 
 -(void)updateLocation;
+
+-(void)GetLocationWithLocation:(GeLocation)locationCompletionHandler cityName:(GetCityName)cityNameCompletionHandler onFailure:(Failure)FailCompletetionHeandler;
 
 @end

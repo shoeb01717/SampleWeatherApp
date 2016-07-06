@@ -11,6 +11,7 @@
 
 @interface ViewController ()
 
+@property (strong, nonatomic) IBOutlet UILabel *currentLocationLabel;
 @end
 
 @implementation ViewController
@@ -19,6 +20,16 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     [[LocationManager sharedManager] updateLocation];
+    
+    [[LocationManager sharedManager] GetLocationWithLocation:^(NSString *latitude, NSString *longitude) {
+        NSLog(@"Latitude and Longitude: %@,%@",latitude,longitude);
+    } cityName:^(NSString *cityName) {
+        NSLog(@"CityName: %@",cityName);
+        self.currentLocationLabel.text = cityName;
+    } onFailure:^(NSError *error) {
+        
+    }];
+    
     
 }
 

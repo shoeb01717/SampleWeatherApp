@@ -17,6 +17,8 @@
     NSString *_longitude;
     
     __block GetCityName _completionCityName;
+    __block GeLocation _completionLocation;
+    __block Failure _completionFailure;
 }
 
 
@@ -41,6 +43,8 @@
     _lattitude = [[NSString alloc] init];
     _longitude = [[NSString alloc] init];
     _completionCityName = nil;
+    _completionLocation = nil;
+    _completionFailure = nil;
 }
 
 -(void)updateLocation {
@@ -53,11 +57,22 @@
     }
 }
 
+-(void)GetLocationWithLocation:(GeLocation)locationCompletionHandler cityName:(GetCityName)cityNameCompletionHandler onFailure:(Failure)FailCompletetionHeandler {
+
+    _completionFailure = [FailCompletetionHeandler copy];
+    _completionCityName = [cityNameCompletionHandler copy];
+    _completionLocation = [locationCompletionHandler copy];
+}
+
 #pragma mark - CLLocationManagerDelegate
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
     NSLog(@"didFailWithError: %@", error);
+    if (_completionFailure) {
+        _completionFailure(error);
+        _completionFailure = nil;
+    }
 
 }
 
@@ -70,14 +85,22 @@
         _lattitude = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.longitude];
         _longitude = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.latitude];
         
-        if (!_completionCityName) {
-            
+        if (_completionLocation) {
+            _completionLocation(_lattitude,_longitude);
+            _completionLocation = nil;
         }
-        [[YWeatherAPI sharedManager] locationStringForCoordinate:currentLocation success:^(NSString *locationString) {
-            NSLog(@"%@",locationString);
-        } failure:^(id response, NSError *error) {
+        
+        if (_completionCityName) {
             
-        }];
+            [[YWeatherAPI sharedManager] locationStringForCoordinate:currentLocation success:^(NSString *locationString) {
+                NSLog(@"%@",locationString);
+                _completionCityName? _completionCityName(locationString) : nil;
+                _completionCityName = nil;
+            } failure:^(id response, NSError *error) {
+                
+            }];
+        }
+
     }
 }
 
