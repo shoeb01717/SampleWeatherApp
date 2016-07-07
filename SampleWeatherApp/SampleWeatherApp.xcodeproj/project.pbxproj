@@ -65,6 +65,8 @@
 		965003491D2E087C003BD8D7 /* Isolated Thundershowers.png in Resources */ = {isa = PBXBuildFile; fileRef = 965003181D2E087C003BD8D7 /* Isolated Thundershowers.png */; };
 		9650034A1D2E087C003BD8D7 /* na.png in Resources */ = {isa = PBXBuildFile; fileRef = 965003191D2E087C003BD8D7 /* na.png */; };
 		9650034C1D2E0F05003BD8D7 /* Tropical Storm.png in Resources */ = {isa = PBXBuildFile; fileRef = 9650034B1D2E0F05003BD8D7 /* Tropical Storm.png */; };
+		9650034E1D2E1F8F003BD8D7 /* Humidity.png in Resources */ = {isa = PBXBuildFile; fileRef = 9650034D1D2E1F8F003BD8D7 /* Humidity.png */; };
+		965003501D2E2810003BD8D7 /* up.png in Resources */ = {isa = PBXBuildFile; fileRef = 9650034F1D2E2810003BD8D7 /* up.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -132,6 +134,8 @@
 		965003181D2E087C003BD8D7 /* Isolated Thundershowers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Isolated Thundershowers.png"; sourceTree = "<group>"; };
 		965003191D2E087C003BD8D7 /* na.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = na.png; sourceTree = "<group>"; };
 		9650034B1D2E0F05003BD8D7 /* Tropical Storm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tropical Storm.png"; sourceTree = "<group>"; };
+		9650034D1D2E1F8F003BD8D7 /* Humidity.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Humidity.png; sourceTree = "<group>"; };
+		9650034F1D2E2810003BD8D7 /* up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = up.png; sourceTree = "<group>"; };
 		967D1405FE08594E0FE043BD /* libPods-SampleWeatherApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SampleWeatherApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -213,6 +217,8 @@
 		965002A91D2D936B003BD8D7 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				9650034F1D2E2810003BD8D7 /* up.png */,
+				9650034D1D2E1F8F003BD8D7 /* Humidity.png */,
 				965002E81D2E086A003BD8D7 /* WeatherIcon */,
 			);
 			path = Images;
@@ -385,6 +391,7 @@
 				965003261D2E087C003BD8D7 /* 12.png in Resources */,
 				965003421D2E087C003BD8D7 /* Scattered Showers.png in Resources */,
 				9650032F1D2E087C003BD8D7 /* Haze.png in Resources */,
+				965003501D2E2810003BD8D7 /* up.png in Resources */,
 				965003321D2E087C003BD8D7 /* Windy.png in Resources */,
 				965003271D2E087C003BD8D7 /* Snow Flurries.png in Resources */,
 				965003491D2E087C003BD8D7 /* Isolated Thundershowers.png in Resources */,
@@ -393,6 +400,7 @@
 				965003371D2E087C003BD8D7 /* Partly Cloudy (night).png in Resources */,
 				965003401D2E087C003BD8D7 /* Scattered Thunderstorms.png in Resources */,
 				963F04031D23DF4A00548E32 /* Main.storyboard in Resources */,
+				9650034E1D2E1F8F003BD8D7 /* Humidity.png in Resources */,
 				9650033B1D2E087C003BD8D7 /* Fair (night).png in Resources */,
 				9650031C1D2E087C003BD8D7 /* Hurricane.png in Resources */,
 			);
