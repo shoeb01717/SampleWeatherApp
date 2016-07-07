@@ -21,4 +21,8 @@ typedef void (^Failure)(NSError *error);
 
 -(void)GetLocationWithLocation:(GeLocation)locationCompletionHandler cityName:(GetCityName)cityNameCompletionHandler onFailure:(Failure)FailCompletetionHeandler;
 
+-(NSString*)getCityName;
+-(NSString*)getLatitude;
+-(NSString*)getLongitude;
+
 @end

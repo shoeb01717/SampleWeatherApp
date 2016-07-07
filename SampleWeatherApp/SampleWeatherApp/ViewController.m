@@ -8,10 +8,15 @@
 
 #import "ViewController.h"
 #import "LocationManager.h"
+#import <YWeatherAPI/YWeatherAPI.h>
+
 
 @interface ViewController ()
 
 @property (strong, nonatomic) IBOutlet UILabel *currentLocationLabel;
+@property (strong, nonatomic) IBOutlet UIImageView *weatherIconImageView;
+@property (strong, nonatomic) IBOutlet UILabel *temparatureLabel;
+
 @end
 
 @implementation ViewController
@@ -26,10 +31,21 @@
     } cityName:^(NSString *cityName) {
         NSLog(@"CityName: %@",cityName);
         self.currentLocationLabel.text = cityName;
+        [self settingUpUIWithWeather];
     } onFailure:^(NSError *error) {
         
     }];
-    
+}
+
+
+-(void)settingUpUIWithWeather{
+
+    [[YWeatherAPI sharedManager] todaysForecastForLocation:[[LocationManager sharedManager] getCityName]success:^(NSDictionary *result) {
+        [self.weatherIconImageView setImage:[UIImage imageNamed:[result objectForKey:kYWAShortDescription]]];
+        self.temparatureLabel.text = [result objectForKey:kYWAHighTemperatureForDay];
+    } failure:^(id response, NSError *error) {
+        
+    }];
     
 }
 

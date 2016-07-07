@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -27,23 +28,71 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oxg-Qi-6JM">
+                                <rect key="frame" x="0.0" y="60" width="600" height="300"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4RJ-Ym-Yam">
+                                        <rect key="frame" x="25" y="50" width="200" height="200"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="th3-b8-yuN">
+                                        <rect key="frame" x="471" y="94" width="112" height="112"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="th3-b8-yuN" secondAttribute="height" multiplier="1:1" id="waw-2n-px6"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="th3-b8-yuN" secondAttribute="trailing" constant="17" id="6hz-0Y-1pP"/>
+                                    <constraint firstItem="4RJ-Ym-Yam" firstAttribute="top" secondItem="Oxg-Qi-6JM" secondAttribute="top" constant="50" id="97U-Nb-5B1"/>
+                                    <constraint firstAttribute="trailing" secondItem="th3-b8-yuN" secondAttribute="trailing" constant="17" id="Dlx-uZ-vT6"/>
+                                    <constraint firstItem="th3-b8-yuN" firstAttribute="top" secondItem="Oxg-Qi-6JM" secondAttribute="top" constant="94" id="HlW-6h-9b0"/>
+                                    <constraint firstItem="4RJ-Ym-Yam" firstAttribute="width" secondItem="Oxg-Qi-6JM" secondAttribute="height" multiplier="2:3" id="Ili-Nn-pvE"/>
+                                    <constraint firstItem="th3-b8-yuN" firstAttribute="top" secondItem="Oxg-Qi-6JM" secondAttribute="top" constant="37" id="NOs-lN-Yco"/>
+                                    <constraint firstAttribute="bottom" secondItem="4RJ-Ym-Yam" secondAttribute="bottom" constant="50" id="UB8-Qg-x5C"/>
+                                    <constraint firstAttribute="bottom" secondItem="th3-b8-yuN" secondAttribute="bottom" constant="38" id="UhR-LH-j5s"/>
+                                    <constraint firstAttribute="height" constant="300" id="WeS-Pa-ihS"/>
+                                    <constraint firstAttribute="bottom" secondItem="th3-b8-yuN" secondAttribute="bottom" constant="94" id="e8o-FZ-Nyz"/>
+                                    <constraint firstItem="4RJ-Ym-Yam" firstAttribute="leading" secondItem="Oxg-Qi-6JM" secondAttribute="leading" constant="25" id="p1Q-d8-3gg"/>
+                                    <constraint firstItem="th3-b8-yuN" firstAttribute="width" secondItem="Oxg-Qi-6JM" secondAttribute="height" multiplier="3:4" id="sno-eo-5hf"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Dlx-uZ-vT6"/>
+                                        <exclude reference="NOs-lN-Yco"/>
+                                        <exclude reference="UhR-LH-j5s"/>
+                                        <exclude reference="sno-eo-5hf"/>
+                                    </mask>
+                                </variation>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Oxg-Qi-6JM" firstAttribute="trailing" secondItem="205-49-1Ae" secondAttribute="trailing" id="1c1-Z8-VLe"/>
                             <constraint firstItem="205-49-1Ae" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="6Dp-68-MKq"/>
                             <constraint firstItem="205-49-1Ae" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="10" id="Ayt-tm-Ifx"/>
                             <constraint firstItem="205-49-1Ae" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="HeN-C1-N3d"/>
+                            <constraint firstItem="Oxg-Qi-6JM" firstAttribute="width" secondItem="205-49-1Ae" secondAttribute="width" id="Hql-KI-pXr"/>
                             <constraint firstItem="205-49-1Ae" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="SbI-bm-mc7"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Oxg-Qi-6JM" secondAttribute="bottom" constant="394" id="jLD-YC-OWa"/>
+                            <constraint firstItem="Oxg-Qi-6JM" firstAttribute="top" secondItem="205-49-1Ae" secondAttribute="bottom" id="jjb-Lv-Lfp"/>
                             <constraint firstAttribute="trailingMargin" secondItem="205-49-1Ae" secondAttribute="trailing" constant="-20" id="jlu-P0-aXa"/>
+                            <constraint firstItem="Oxg-Qi-6JM" firstAttribute="leading" secondItem="205-49-1Ae" secondAttribute="leading" id="zqx-l8-TaC"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="6Dp-68-MKq"/>
+                                <exclude reference="jLD-YC-OWa"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="currentLocationLabel" destination="205-49-1Ae" id="Yh8-Pc-7AG"/>
+                        <outlet property="temparatureLabel" destination="4RJ-Ym-Yam" id="Qa6-Py-1Xp"/>
+                        <outlet property="weatherIconImageView" destination="th3-b8-yuN" id="JQ1-H3-OUu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

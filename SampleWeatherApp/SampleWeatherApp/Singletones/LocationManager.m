@@ -15,6 +15,7 @@
     
     NSString *_lattitude;
     NSString *_longitude;
+    NSString *_cityName;
     
     __block GetCityName _completionCityName;
     __block GeLocation _completionLocation;
@@ -42,9 +43,23 @@
     
     _lattitude = [[NSString alloc] init];
     _longitude = [[NSString alloc] init];
+    _cityName = [[NSString alloc] init];
     _completionCityName = nil;
     _completionLocation = nil;
     _completionFailure = nil;
+}
+
+-(NSString*)getCityName{
+
+    return _cityName;
+}
+-(NSString*)getLatitude{
+
+    return _lattitude;
+}
+-(NSString*)getLongitude{
+
+    return _longitude;
 }
 
 -(void)updateLocation {
@@ -90,17 +105,16 @@
             _completionLocation = nil;
         }
         
-        if (_completionCityName) {
-            
-            [[YWeatherAPI sharedManager] locationStringForCoordinate:currentLocation success:^(NSString *locationString) {
-                NSLog(@"%@",locationString);
-                _completionCityName? _completionCityName(locationString) : nil;
+        [[YWeatherAPI sharedManager] locationStringForCoordinate:currentLocation success:^(NSString *locationString) {
+            NSLog(@"%@",locationString);
+            if (_completionCityName) {
+                _cityName = [NSString stringWithFormat:@"%@",locationString];
+                _completionCityName(_cityName);
                 _completionCityName = nil;
-            } failure:^(id response, NSError *error) {
-                
-            }];
-        }
-
+            }
+        } failure:^(id response, NSError *error) {
+            
+        }];
     }
 }
 
